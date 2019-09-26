@@ -1,20 +1,49 @@
 var express = require("express");
- 
 var app = express();
  
-app.use(express.static("public"));
- 
+
+//définition du moteur de template  
 app.set("view engine", "ejs");
 app.set("views", "./views");
- 
-app.listen(3000);
- 
+
+//Middleware 
+app.use(express.static("public"));
+
+
+//Routes
 app.get("/", function(request, response)  {
     
     response.render("homePage");
 });
- 
-app.get("/test", function(request, response)  {
+
+app.get("/cart", function(request, response)  {
     
-    response.render("testPage");
+    response.render("cart");
 });
+ 
+app.get("/auth", function(request, response)  {
+    
+    response.render("authPage");
+});
+
+app.get("/categories", function(request, response)  {
+    
+    response.render("categories");
+});
+
+app.get("/checkout", function(request, response)  {
+    
+    response.render("checkout");
+});
+
+app.get("/contact", function(request, response)  {
+    
+    response.render("contact");
+});
+
+app.get("/product", function(request, response)  {
+    
+    response.render("product");
+});
+
+app.listen(3000);
