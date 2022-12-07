@@ -19,6 +19,6 @@
   "dependencies": {
     "dynamics-web-api": "^1.5.10",
     "ejs": "^2.7.1",
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   }
 }
